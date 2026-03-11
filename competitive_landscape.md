@@ -42,7 +42,6 @@ Apps such as Tiimo provide a visual timeline of the entire day, which helps redu
 
 Adding a visual schedule could reduce anxiety and improve planning for users who prefer to see the big picture.
 
----
 
 ## One Improvement Focus Bear Could Make
 
@@ -57,8 +56,6 @@ Possible improvement ideas:
 - Soft incentives instead of only hard constraints  
 
 This would make the experience more fun and encouraging, not just functional.
-
----
 
 ## Key Takeaway
 
