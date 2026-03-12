@@ -4,7 +4,6 @@
 I used **Claude Code** for this task. It is an AI coding assistant that can read files, explain code, and help with debugging.
 
 ## Task 1: Understanding Existing Code
-
 ### What I Did (Simple Example)
 I copied a small function from my project (a basic calculator function) and asked Claude:
 
