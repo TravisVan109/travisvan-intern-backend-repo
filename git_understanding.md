@@ -41,6 +41,23 @@ A good PR usually includes:
 - Code quality, readability, and testing are **prioritized** in open-source projects.  
 - I learned how to **follow comments, reply respectfully, and track requested changes**.  
 
-##  Reflection
+## What Makes a Good Commit Message?
 
-Pull Requests are essential for teamwork, maintaining quality, and learning from others. A clear, well-documented PR makes it easier for teammates to review and approve changes quickly. Reviewing an open-source PR taught me how constructive feedback is provided and how discussions improve the overall code quality.
+- **Concise and descriptive:** Summarizes the change in 50 characters or less if possible.  
+- **Focused:** Each commit should handle one logical change.  
+- **Contextual:** Explains what changed and why if necessary.  
+- **Formatted:** Optionally, use a subject line, empty line, and longer description for details.
+
+## How Clear Commit Messages Help Collaboration
+
+- Makes code review faster and easier.  
+- Helps teammates understand the history of changes.  
+- Reduces confusion when debugging or reverting code.  
+- Improves traceability of features or bug fixes.
+
+## How Poor Commit Messages Cause Issues
+
+- Hard to understand what changes were made.  
+- Difficult to track down bugs or why a change was made.  
+- Increases time spent during code reviews or when onboarding new team members.  
+- Reduces overall maintainability of the project.
