@@ -121,3 +121,50 @@ Shows **who changed each line**, when, and in which commit.
 
 ### What surprised me
 It’s extremely detailed, every single line has a history. Also great for learning how code evolved.
+
+#  Reflections on Branching & Team Collaboration 
+
+## Why is pushing directly to main problematic?
+
+Pushing straight to main is risky because:
+
+Bugs go live instantly — if the code is broken, it affects everyone.
+
+No code review — teammates cannot catch mistakes or suggest improvements.
+
+No testing stage — code is not tested before landing in the stable branch.
+
+Harder to track mistakes — if multiple people push directly, it’s unclear who introduced a bug.
+
+Can break the whole team’s workflow — other developers pull main and get broken code.
+
+## How do branches help with reviewing code? 
+
+Work on new features without affecting the main codebase.
+
+Submit a Pull Request (PR) so teammates can review the changes.
+
+Catch bugs, typos, missing tests, and logic errors before merging.
+
+Discuss improvements through comments.
+
+Merge only when the code is stable and approved.
+
+## What happens if two people edit the same file on different branches?
+this is very common in team projects and it has two main scenarios:
+
+### Scenario 1: They edit different lines
+
+Git can automatically merge both changes
+→ No conflict
+→ Merge is easy.
+
+### Scenario 2: They edit the same line
+
+A merge conflict happens.
+
+Example:
+
+Branch A edits line 12 of config.js
+
+Branch B also edits line 12
