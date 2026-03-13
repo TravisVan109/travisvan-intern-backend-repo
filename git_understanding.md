@@ -61,3 +61,13 @@ A good PR usually includes:
 - Difficult to track down bugs or why a change was made.  
 - Increases time spent during code reviews or when onboarding new team members.  
 - Reduces overall maintainability of the project.
+
+#  Reflections on Using Git Bisect
+- **What it does:**  
+Quickly identifies the exact commit that introduced a bug using binary search, saving time compared to manually checking every commit.
+
+- **When to use it:**  
+Useful in large projects with many commits where the source of a bug isn’t obvious. Helps isolate issues efficiently during debugging.
+
+- **Comparison to manual review:**  
+Manual review can be slow and error-prone. Git bisect automates the search and reduces the number of commits you need to inspect significantly.

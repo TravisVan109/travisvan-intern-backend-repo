@@ -1,7 +1,7 @@
-//introduce a bug in the add function
+//reset git bisect to the correct commit and fix the bug in the add function
 //function to add two numbers
 function add(a, b) {
-    return a - b;// bug introduced
+    return a + b;// bug fixed
 }
 
 //function to multiply two numbers
