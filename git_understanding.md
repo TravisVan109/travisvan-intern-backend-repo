@@ -71,3 +71,53 @@ Useful in large projects with many commits where the source of a bug isn’t obv
 
 - **Comparison to manual review:**  
 Manual review can be slow and error-prone. Git bisect automates the search and reduces the number of commits you need to inspect significantly.
+
+# Advanced Git Commands
+## 1. git checkout main -- <file>
+### What it does
+Restores a **single file** from the `main` branch without touching any other changes in the working directory.
+
+### When to use it
+- When you accidentally mess up one file but want to keep all other edits.
+- When you only want to copy a “good version” of a file from another branch.
+
+### What surprised me
+It fixes only ONE file and leaves everything else untouched — very useful and safer than a full reset.
+
+
+## 2. git cherry-pick <commit>
+### What it does
+Takes a **specific commit** from another branch and applies it onto your current branch.
+
+### When to use it
+- When one branch has a useful fix but you don't want to merge the whole branch.
+- When you want to reuse a single commit across multiple branches.
+
+### What surprised me
+It allows extremely precise control, I can grab a single commit like a “copy/paste” of code history.
+(it's quite helpful when you do many tasks in that branch or many people involving in that branch, and you cannot merge the whole branch, so just pick only the commit that you want)
+
+## 3. git log
+### What it does
+Shows a full history of commits. With `--oneline --graph`, it visualises branches and merges.
+
+### When to use it
+- Understand how the project has evolved.
+- Track down when features or bugs were introduced.
+- Find commit hashes for cherry-picking or reverting.
+
+### What surprised me
+The graph view makes it very clear how branches diverge and merge over time.
+
+
+## 4. git blame <file>
+### What it does
+Shows **who changed each line**, when, and in which commit.
+
+### When to use it
+- Debugging: find out who wrote a buggy line.
+- Understanding why a line exists.
+- Reviewing team contributions.
+
+### What surprised me
+It’s extremely detailed, every single line has a history. Also great for learning how code evolved.
