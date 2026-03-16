@@ -41,6 +41,50 @@ A good PR usually includes:
 - Code quality, readability, and testing are **prioritized** in open-source projects.  
 - I learned how to **follow comments, reply respectfully, and track requested changes**.  
 
+# Writing Meaningful Commit Messages
+## My Commit Message Experiments
+
+### 1. Vague Commit Message
+Actual commit created in repo:"fix stuff"
+
+**Why it is vague:**  
+- No context  
+- Doesn’t describe what changed  
+- Not useful for teammates
+
+### 2. Overly Detailed Commit Message
+Actual commit created in repo: "Updated the math.js file to include three functions: Add, multiply and bug function. The add function and the multiply function is for good commits, meanwhile, the bug function is the bad commit which introduced the bug. the purpose of these commits is to practice debugging by git bisect. with this practice, it shown which commit is good and which one is bad, then user can reset git bisect to back to the closest good commit.
+"
+**Why overly detailed:**  
+- Too long  
+- Hard to read  
+- Should be broken into multiple commits
+
+### 3. Well-Structured Commit Message
+Actual commit created in repo: "feat: Add Multiple, add and subtraction function (introduced bug) for practicing Git Bisect"
+
+**Why it’s well structured:**  
+- Clear title  
+- Bullet points  
+- Follows conventional commits
+
+## Examples From an Open-Source Repository
+### Good Commit Message
+doc: add throwIfNoEntry version history to fs.stat
+
+**Why good:**
+Clear purpose
+Short and descriptive
+Uses a conventional prefix
+
+### Bad Commit Message
+more todo items
+
+**Why bad:**
+No context
+No details
+Not helpful for maintainers
+
 ## What Makes a Good Commit Message?
 
 - **Concise and descriptive:** Summarizes the change in 50 characters or less if possible.  
