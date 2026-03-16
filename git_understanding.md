@@ -107,6 +107,52 @@ Not helpful for maintainers
 - Reduces overall maintainability of the project.
 
 #  Reflections on Using Git Bisect
+## Hands-on Experiment: Using `git bisect`
+
+### 1. Test Repo Setup and Commits
+I created a simple test repository with a `math.js` file and made several commits:
+
+- Commit 1: Add add() function  
+- Commit 2: Add multiply() function  
+- Commit 3: Introduce bug in add() function (intentional)
+
+Here is part of the `git log` showing the commits:
+commit 9293823de367f126ede27b2d5ace09d62e260a24
+Author: Văn Công Thành <vancongthanh109@gmail.com>
+Date:   Fri Mar 13 11:40:35 2026 +1100
+
+    Introduce bug in add() function
+
+commit 308b91d9e16d7cff706a009de5afe92581262fb1
+Author: Văn Công Thành <vancongthanh109@gmail.com>
+Date:   Fri Mar 13 11:24:58 2026 +1100
+
+    Add multiply() function
+
+commit 40d27282e12271cb97052493655b8991701dc924
+Author: Văn Công Thành <vancongthanh109@gmail.com>
+Date:   Fri Mar 13 11:18:50 2026 +1100
+
+    Initial commit: add add() function
+
+### 2. Detailed cmd and output when I used git bisect
+git bisect start
+status: waiting for both good and bad commits 
+git bisect bad 
+status: waiting for good commit(s), bad commit known 
+git bisect good HEAD~3 Bisecting: 0 revisions left to test after this (roughly 1 step) [308b91d9e16d7cff706a009de5afe92581262fb1] Add multiply() function 
+node math.js 
+5 
+6
+
+git bisect good
+9293823de367f126ede27b2d5ace09d62e260a24 is the first bad commit commit 9293823de367f126ede27b2d5ace09d62e260a24 (origin/...) 
+Author: Văn Công Thành <vancongthanh109@gmail.com>
+Date: Fri Mar 13 11:40:35 2026 +1100 Introduce bug in add() function math.js | 7 +++---- 1 file changed, 3 insertions(+), 4 deletions(-)
+
+git bisect reset
+Previous HEAD position was 308b91d Add multiply() function Switched to branch '...' Your branch is up to date with 'origin/travisvan-intern-milestone-3-3'.
+
 - **What it does:**  
 Quickly identifies the exact commit that introduced a bug using binary search, saving time compared to manually checking every commit.
 
