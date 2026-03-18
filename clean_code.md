@@ -16,3 +16,11 @@
 
 5. **Efficiency**  
    Write performant code, but avoid premature optimization. Focus on readability and maintainability first, then optimize only when necessary.
+
+# Naming Variables & Functions
+
+## Best Practices
+- **Be descriptive:** Names should explain what the variable or function represents or does.  
+- **Use consistent style:** For example, `camelCase` for variables/functions in JavaScript.  
+- **Avoid abbreviations:** Unless they are widely understood (`id`, `url`, `max`).  
+- **Reflect intent:** Function names should describe the action they perform.  
