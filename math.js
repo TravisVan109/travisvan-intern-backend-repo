@@ -28,3 +28,20 @@ function doubleOrAddTwo(value) {
         return value + 2;
     }
 }
+
+//Example of Unclear Names 
+function a(b, c) {
+    return b * c;
+}
+
+let x = 10;
+let y = 20;
+let z = a(x, y);
+//Clearer Names code
+function multiplyNumbers(number1, number2) {
+    return number1 * number2;
+}
+
+let firstValue = 10;
+let secondValue = 20;
+let result = multiplyNumbers(firstValue, secondValue);
