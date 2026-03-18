@@ -31,3 +31,10 @@ Improves readability, reduces bugs, simplifies testing, and makes code easier to
 
 ## How did refactoring improve the structure?
 The code is modular, easier to follow, and each part can be reused or modified independently.
+
+# Avoiding Code Duplication (DRY)
+## What were the issues with duplicated code?
+Duplication made the code harder to read, understand, and maintain. Multiple copies of the same logic increased the chance of mistakes when updating functionality.
+
+## How did refactoring improve maintainability?
+Refactoring allowed us to use clear, reusable functions. Logic is now centralized, making the code easier to read, test, and modify in the future.

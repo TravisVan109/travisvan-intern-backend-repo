@@ -77,15 +77,11 @@ function applyDiscount(total, coupon) {
     return total;
 }
 
-function notifyCustomer(email, message) {
-    sendEmail(email, message);
-}
-
 function processOrder(order) {
     let total = calculateTotal(order);
     total = applyDiscount(total, order.coupon);
     console.log(`Total for ${order.customerName}: $${total}`);
-    notifyCustomer(order.customerEmail, `Your order total is $${total}`);
+    sendEmail(order.customerEmail, `Your order total is $${total}`);
 }
 
 
