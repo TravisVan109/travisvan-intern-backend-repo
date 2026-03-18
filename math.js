@@ -17,3 +17,14 @@ console.log(multiply(2, 3));
 //Travis fixed stuff
 //Travis Overly Detailed Commit
 //Travis The Well-Structured Commit again
+
+//example of messy code
+function a(x){if(x>0){return x*2}else{return x+2}}
+//cleaned up code
+function doubleOrAddTwo(value) {
+    if (value > 0) {
+        return value * 2;
+    } else {
+        return value + 2;
+    }
+}
