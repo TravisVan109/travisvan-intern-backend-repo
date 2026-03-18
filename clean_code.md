@@ -24,3 +24,10 @@
 - **Use consistent style:** For example, `camelCase` for variables/functions in JavaScript.  
 - **Avoid abbreviations:** Unless they are widely understood (`id`, `url`, `max`).  
 - **Reflect intent:** Function names should describe the action they perform.  
+
+# Writing Small, Focused Functions
+## Why is breaking down functions beneficial?
+Improves readability, reduces bugs, simplifies testing, and makes code easier to maintain.
+
+## How did refactoring improve the structure?
+The code is modular, easier to follow, and each part can be reused or modified independently.
