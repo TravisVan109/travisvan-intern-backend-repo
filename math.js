@@ -1,10 +1,16 @@
 //reset git bisect to the correct commit and fix the bug in the add function
-//function to add two numbers
+/**
+ * Sums two numeric values.
+ * Used for testing purposes in the git bisect process.
+ */
 function add(a, b) {
     return a + b;// bug fixed
 }
 
-//function to multiply two numbers
+/**
+ * Multiplies two numeric values.
+ * Used for testing purposes in the git bisect process.
+ */
 function multiply(a, b) {
     return a * b;
 }
