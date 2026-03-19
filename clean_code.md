@@ -38,3 +38,24 @@ Duplication made the code harder to read, understand, and maintain. Multiple cop
 
 ## How did refactoring improve maintainability?
 Refactoring allowed us to use clear, reusable functions. Logic is now centralized, making the code easier to read, test, and modify in the future.
+
+# Commenting & Documentation
+## When should you add comments?
+
+When the code performs non-obvious logic that requires context.
+
+When explaining decisions, constraints, or “why” something is implemented a certain way.
+
+When documenting functions, parameters, return values, and expected behavior.
+
+When describing edge cases, warnings, or limitations.
+
+## When should you avoid comments and improve the code instead?
+
+When the code is confusing only because of bad naming—rename things instead.
+
+When comments repeat what the code already clearly shows (“add 1 to i”).
+
+When comments are used to justify overly complex functions—refactor instead.
+
+When improving code structure makes the comment unnecessary.
