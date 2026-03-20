@@ -71,3 +71,25 @@ This could easily cause runtime errors if any field was missing, incorrect, or t
 Adding guard clauses and error handling makes the function safer and more predictable.
 The code now fails early with clear messages instead of crashing later.
 This reduces debugging time, prevents unexpected behavior, and improves the overall robustness of the system.
+
+# Refactoring Code for Simplicity
+
+## What made the original code complex?
+It mixed multiple responsibilities inside a single function.
+
+Calculating totals, applying discounts, logging, and sending emails were all tightly coupled.
+
+Harder to test or extend the business logic.
+
+No helper functions, so the intent of each step was not explicit.
+
+## How refactoring improved it
+Introduced helper functions (calculateFinalTotal, createOrderMessage) to separate concerns.
+
+Improved readability by naming steps clearly.
+
+Reduced duplication and made control flow easier to understand.
+
+The processOrder() function now only coordinates the process.
+
+Future modifications (tax, new discounts, logging changes) can be done in small places instead of changing the whole function.

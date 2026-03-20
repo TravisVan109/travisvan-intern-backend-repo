@@ -53,20 +53,20 @@ let secondValue = 20;
 let result = multiplyNumbers(firstValue, secondValue);
 
 // Example of a long, complex function
-function processOrder(order) {
-    let total = 0;
-    for (let item of order.items) {
-        total += item.price * item.quantity;
-        if (item.quantity > 10) {
-            console.log("Large quantity discount applied");
-        }
-    }
-    if (order.coupon) {
-        total -= order.coupon.discount;
-    }
-    console.log(`Total for ${order.customerName}: $${total}`);
-    sendEmail(order.customerEmail, `Your order total is $${total}`);
-}
+// function processOrder(order) {
+//     let total = 0;
+//     for (let item of order.items) {
+//         total += item.price * item.quantity;
+//         if (item.quantity > 10) {
+//             console.log("Large quantity discount applied");
+//         }
+//     }
+//     if (order.coupon) {
+//         total -= order.coupon.discount;
+//     }
+//     console.log(`Total for ${order.customerName}: $${total}`);
+//     sendEmail(order.customerEmail, `Your order total is $${total}`);
+// }
 // Refactored version of the processOrder function
 function calculateTotal(order) {
     let total = 0;
@@ -83,12 +83,12 @@ function applyDiscount(total, coupon) {
     return total;
 }
 
-function processOrder(order) {
-    let total = calculateTotal(order);
-    total = applyDiscount(total, order.coupon);
-    console.log(`Total for ${order.customerName}: $${total}`);
-    sendEmail(order.customerEmail, `Your order total is $${total}`);
-}
+// function processOrder(order) {
+//     let total = calculateTotal(order);
+//     total = applyDiscount(total, order.coupon);
+//     console.log(`Total for ${order.customerName}: $${total}`);
+//     sendEmail(order.customerEmail, `Your order total is $${total}`);
+// }
 
 // Refactored version of the processOrder function with guard clauses & error handling
 function processOrder(order) {
