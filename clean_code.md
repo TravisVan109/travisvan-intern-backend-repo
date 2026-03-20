@@ -59,3 +59,15 @@ When comments repeat what the code already clearly shows (“add 1 to i”).
 When comments are used to justify overly complex functions—refactor instead.
 
 When improving code structure makes the comment unnecessary.
+
+# Handling Errors & Edge Cases
+
+## What was the issue with the original code?
+The original function did not validate any of the inputs.
+It assumed that order, items, price, quantity, and coupon.discount were always valid.
+This could easily cause runtime errors if any field was missing, incorrect, or the wrong type.
+
+## How does handling errors improve reliability?
+Adding guard clauses and error handling makes the function safer and more predictable.
+The code now fails early with clear messages instead of crashing later.
+This reduces debugging time, prevents unexpected behavior, and improves the overall robustness of the system.
