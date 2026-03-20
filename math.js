@@ -90,4 +90,40 @@ function processOrder(order) {
     sendEmail(order.customerEmail, `Your order total is $${total}`);
 }
 
+// Refactored version of the processOrder function with guard clauses & error handling
+function processOrder(order) {
+    // Guard clause: order must be provided
+    if (!order || typeof order !== "object") {
+        throw new Error("A valid order object is required.");
+    }
 
+    // Guard clause: items must exist
+    if (!Array.isArray(order.items) || order.items.length === 0) {
+        throw new Error("Order must include at least one item.");
+    }
+
+    // Guard clause: validate coupon format
+    if (order.coupon && typeof order.coupon.discount !== "number") {
+        throw new Error("Coupon must have a numeric discount value.");
+    }
+
+    // Guard clause: customer details
+    if (!order.customerName || !order.customerEmail) {
+        throw new Error("Customer name and email are required.");
+    }
+
+    // safe calculation
+    let total = calculateTotal(order);
+    total = applyDiscount(total, order.coupon);
+
+    console.log(`Total for ${order.customerName}: $${total}`);
+
+    // Try/catch for external servic
+    try {
+        sendEmail(order.customerEmail, `Your order total is $${total}`);
+    } catch (err) {
+        console.error("Failed to send email:", err.message);
+    }
+
+    return total;
+}
