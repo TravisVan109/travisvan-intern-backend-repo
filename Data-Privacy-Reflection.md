@@ -1,8 +1,8 @@
 # Data Privacy & Confidentiality Reflection
 
 ## Goal
-Understand how to handle sensitive data responsibly and follow Focus Bear’s privacy and confidentiality policies.
 
+Understand how to handle sensitive data responsibly and follow Focus Bear’s privacy and confidentiality policies.
 
 # Research
 
@@ -17,7 +17,6 @@ From reviewing the Focus Bear Privacy Policy, several important points stand out
 - Focus Bear protects data using **security measures such as encryption, anonymisation, and trusted service providers**.
 - Data is only shared with **authorised partners or service providers** who help operate the service.
 - Users have rights over their data, including **access, correction, deletion, and the right to withdraw consent**.
-
 
 ## Types of Confidential Data at Focus Bear
 
@@ -35,7 +34,6 @@ Some examples of confidential or sensitive data include:
 
 This data must be handled carefully to protect user privacy and maintain trust.
 
-
 ## Best Practices for Handling Confidential Data
 
 Best practices for protecting confidential data include:
@@ -49,7 +47,6 @@ Best practices for protecting confidential data include:
 
 These practices help reduce the risk of data breaches or misuse.
 
-
 ## Responding to a Suspected Data Breach
 
 If a data breach or accidental disclosure happens, the correct response should include:
@@ -60,7 +57,6 @@ If a data breach or accidental disclosure happens, the correct response should i
 - Allowing the company to **investigate and manage the incident properly**.
 
 Quick reporting is important to minimise damage and ensure compliance with privacy laws.
-
 
 # Reflection
 
@@ -75,7 +71,6 @@ To handle data responsibly in my daily work, I can:
 
 These steps will help ensure that sensitive information is protected.
 
-
 ## Safe Storage, Sharing, and Disposal of Sensitive Information
 
 Sensitive data should always be handled carefully:
@@ -85,7 +80,6 @@ Sensitive data should always be handled carefully:
 - **Disposal:** Delete or remove sensitive data when it is no longer needed and follow company policies for data retention.
 
 This reduces the risk of information being accessed by unauthorised people.
-
 
 ## Common Mistakes That Cause Data Privacy Issues
 
@@ -97,7 +91,6 @@ Some common mistakes that can lead to privacy problems include:
 - Accidentally sending information to the wrong person.
 
 These risks can be avoided by staying careful, following company policies, and double-checking before sharing information.
-
 
 # Task Outcome
 

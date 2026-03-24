@@ -1,8 +1,8 @@
 # AI Usage Guidelines
 
 ## Goal
-The goal of this activity is to understand how to use AI tools responsibly and effectively while protecting sensitive information and maintaining critical thinking. AI tools can improve productivity, but they must be used carefully to avoid mistakes or data privacy issues.
 
+The goal of this activity is to understand how to use AI tools responsibly and effectively while protecting sensitive information and maintaining critical thinking. AI tools can improve productivity, but they must be used carefully to avoid mistakes or data privacy issues.
 
 # Research
 
@@ -17,23 +17,23 @@ As a backend intern, AI tools can help support tasks such as:
 
 Examples of AI tools include ChatGPT, code assistants, and AI-powered developer tools that help with coding and research.
 
-
 ## Benefits and Risks of Using AI
 
 ### Benefits
+
 - Helps generate ideas and solutions quickly
 - Improves productivity when researching or learning new concepts
 - Assists with writing, documentation, or code suggestions
 - Helps explain complex technical topics
 
 ### Risks
+
 - AI-generated information may be incorrect or outdated
 - Over-reliance on AI can reduce critical thinking
 - Sensitive or confidential data could be exposed if entered into AI tools
 - AI responses may not fully understand the context of a project
 
 Because of these risks, AI should be used as a **support tool**, not a replacement for human judgement.
-
 
 ## Information That Should Not Be Entered into AI Tools
 
@@ -58,7 +58,6 @@ AI-generated outputs should always be checked carefully before being used. Some 
 
 Fact-checking ensures that AI-generated content is accurate and reliable.
 
-
 # Reflection
 
 ## When to Use AI vs Personal Skills
@@ -78,7 +77,6 @@ However, it is important to rely on personal skills when:
 - Evaluating whether AI-generated information is correct
 
 AI should support learning and productivity rather than replace critical thinking.
-
 
 ## Avoiding Over-Reliance on AI
 
