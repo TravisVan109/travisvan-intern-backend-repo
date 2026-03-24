@@ -115,7 +115,7 @@ Many people with ADHD prefer tools that:
 ## Design Improvement Idea
 
 One possible improvement to make Focus Bear more accessible relates to how feedback prompts appear when users close or exit the app.
-Currently, users may be asked why they are not using Focus Bear or why they are exiting (when they procceed closing/quitting the app). While this can help collect useful feedback, frequent prompts might feel inconvenient for users who simply want to close the app quickly. In these situations, users might provide rushed or random answers just to skip the prompt, which may not provide meaningful insights.
+Currently, users may be asked why they are not using Focus Bear or why they are exiting (when they proceed closing/quitting the app). While this can help collect useful feedback, frequent prompts might feel inconvenient for users who simply want to close the app quickly. In these situations, users might provide rushed or random answers just to skip the prompt, which may not provide meaningful insights.
 A potential improvement could be to reduce how often these prompts appear, or only show them in specific cases such as when a user is uninstalling the app or leaving the platform permanently. This may help collect more thoughtful feedback while keeping the user experience smooth and less frustrating.
 
 another potential improvement is to make the **"Remove Blocks for Emergencies"** feature clearer. The current phrase might cause some users to misunderstand its purpose or feel unnecessary panic when they see it. A possible improvement could be to **reword the label or add a short explanation** so that users understand when and how it should be used, making the experience more reassuring and user-friendly.
