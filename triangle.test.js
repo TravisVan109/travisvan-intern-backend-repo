@@ -51,7 +51,7 @@ test('floats invalid 1', () => {
 });
 
 test('floats invalid 2', () => {
-  expect(decideType([4.0, 4.0, 3.0])).toBe('invalid');
+  expect(decideType([4.0, 4.0, 3.0])).toBe('isosceles');
 });
 
 test('strings invalid', () => {
@@ -105,5 +105,5 @@ test('2, 1, 3', () => {
 });
 
 test('2, 3, 1', () => {
-  expect(decideType([2, 3, 1])).ToBe('invalid');
+  expect(decideType([2, 3, 1])).toBe('invalid');
 });
