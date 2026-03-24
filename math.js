@@ -127,3 +127,150 @@ function processOrder(order) {
 
     return total;
 }
+
+/////////// Identifying & Fixing Code Smells
+// Magic Numbers & Magic Strings
+function calculateShipping(weight) {
+    if (weight > 20) return weight * 1.5 + 10;
+    return weight * 1.2 + 5;
+}
+// Long Function
+function processUser(user) {
+    console.log("Starting process");
+
+    if (user.role === "admin") {
+        user.permissions = ["ALL"];
+    } else {
+        user.permissions = ["READ"];
+    }
+
+    if (user.active) {
+        console.log("User active");
+    } else {
+        console.log("User inactive");
+    }
+
+    user.lastLogin = new Date();
+
+    sendEmail(user.email, "Your account was updated");
+
+    console.log("Process finished");
+}
+// Duplicate Code
+function getAdminMessage(name) {
+    return "Welcome " + name + ", you have admin access.";
+}
+
+function getUserMessage(name) {
+    return "Welcome " + name + ", you have user access.";
+}
+// Large Class (God Object)
+class AppManager {
+    constructor() {
+        this.users = [];
+        this.logs = [];
+        this.settings = {};
+    }
+
+    addUser(user) { /* ... */ }
+    removeUser(id) { /* ... */ }
+    logError(err) { /* ... */ }
+    updateSettings(newSettings) { /* ... */ }
+    sendMarketingEmails() { /* ... */ }
+}
+// Deeply Nested Conditionals
+function checkAccess(user) {
+    if (user) {
+        if (user.role) {
+            if (user.active) {
+                if (user.role === "admin") {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+// Commented-Out Code
+function sum(a, b) {
+    // let temp = a * 10;  // old logic
+    return a + b;
+}
+// Inconsistent Naming
+let n = 5;
+let UserName = "john";
+function calc(x) {
+    return x * n;
+}
+
+// Refactored version of the above code smells
+// Refactored Magic Numbers & Strings
+const HEAVY_WEIGHT_LIMIT = 20;
+const HEAVY_RATE = 1.5;
+const NORMAL_RATE = 1.2;
+const HEAVY_FEE = 10;
+const NORMAL_FEE = 5;
+
+function calculateShipping(weight) {
+    return weight > HEAVY_WEIGHT_LIMIT
+        ? weight * HEAVY_RATE + HEAVY_FEE
+        : weight * NORMAL_RATE + NORMAL_FEE;
+}
+// Refactored Long Function
+function setPermissions(user) {
+    user.permissions = user.role === "admin" ? ["ALL"] : ["READ"];
+}
+
+function logActivity(user) {
+    console.log(user.active ? "User active" : "User inactive");
+}
+
+function notifyUser(email) {
+    sendEmail(email, "Your account was updated");
+}
+
+function processUser(user) {
+    console.log("Starting process");
+    setPermissions(user);
+    logActivity(user);
+    user.lastLogin = new Date();
+    notifyUser(user.email);
+    console.log("Process finished");
+}
+// Refactored Duplicate Code
+function getMessage(name, role) {
+    return `Welcome ${name}, you have ${role} access.`;
+}
+// Refactored Large Class (Split into Responsibilities)
+class UserManager {
+    constructor() {
+        this.users = [];
+    }
+    addUser(user) { /* ... */ }
+    removeUser(id) { /* ... */ }
+}
+
+class Logger {
+    logError(err) { /* ... */ }
+}
+
+class SettingsManager {
+    updateSettings(settings) { /* ... */ }
+}
+// Refactored Deeply Nested Conditionals
+function checkAccess(user) {
+    if (!user) return false;
+    if (!user.active) return false;
+    return user.role === "admin";
+}
+// Refactored Commented-Out Code
+function sum(a, b) {
+    return a + b;
+}
+// Refactored Inconsistent Naming
+const multiplier = 5;
+const username = "john";
+
+function calculate(value) {
+    return value * multiplier;
+}
