@@ -7,6 +7,7 @@ A professional environment includes being kind to teammates, communicating effec
 ## Professional vs. Unprofessional Behaviour
 
 ### Professional Behaviour
+
 - Communicating clearly and respectfully in messages and meetings.
 - Being punctual and prepared for meetings.
 - Listening to teammates’ ideas and opinions.
@@ -14,12 +15,12 @@ A professional environment includes being kind to teammates, communicating effec
 - Taking responsibility for mistakes and learning from them.
 
 ### Unprofessional Behaviour
+
 - Ignoring messages or failing to respond to teammates.
 - Interrupting others or dominating conversations in meetings.
 - Using rude or sarcastic language in communication.
 - Blaming others for mistakes instead of solving problems.
 - Making inappropriate jokes or discriminatory comments.
-
 
 ## Respectful Communication in Remote Teams
 
@@ -36,11 +37,13 @@ For example, instead of saying “This is wrong,” it is better to say “I thi
 ## Giving and Receiving Feedback Professionally
 
 When giving feedback, it is important to:
+
 - Focus on the task or behaviour, not the person.
 - Provide suggestions for improvement.
 - Be respectful and constructive.
 
 When receiving feedback, it is important to:
+
 - Listen carefully and avoid reacting defensively.
 - Ask questions if something is unclear.
 - View feedback as an opportunity to learn and improve.
@@ -74,7 +77,6 @@ I can help create a positive and professional environment by:
 
 A friendly and respectful environment helps everyone feel comfortable and motivated to work.
 
-
 ## Preparing for Meetings with Supervisors and Colleagues
 
 To prepare for meetings effectively, I will:
@@ -85,7 +87,6 @@ To prepare for meetings effectively, I will:
 - Follow up on any action items after the meeting.
 
 Being prepared helps meetings run more smoothly and productively.
-
 
 ## Being Proactive During My Internship
 
@@ -98,13 +99,11 @@ Being proactive means taking initiative and showing responsibility in my work. D
 
 This shows engagement and willingness to learn.
 
-
 ## Following Up with Colleagues or Supervisors
 
 If I need information or action from someone, I will first send a polite message or reminder. If there is no response after a reasonable amount of time, I can follow up again with a clear and respectful message.
 
 If the issue is urgent or continues to block progress, I may escalate the issue by informing my supervisor so the team can address it quickly.
-
 
 ## Things I Will Avoid
 
@@ -116,13 +115,11 @@ To maintain professionalism, I will avoid:
 - Engaging in bullying, discrimination, or toxic behaviour.
 - Reacting emotionally to feedback or disagreements.
 
-
 ## Reporting Serious Issues
 
 If I observe serious breaches of professional conduct, such as harassment, discrimination, or unethical behaviour, I understand that I should report the issue through the appropriate channels. This may include contacting management or using the CEO’s contact information provided in the onboarding materials.
 
 Reporting serious issues helps maintain a safe and respectful workplace for everyone.
-
 
 ## Key Learning
 

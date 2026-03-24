@@ -1,6 +1,7 @@
 # OHS – Laptop Ergonomics
 
 ## Goal
+
 Understand how to set up a safe and ergonomic workspace, especially when using a laptop, and develop habits to prevent strain and discomfort.
 
 # Research

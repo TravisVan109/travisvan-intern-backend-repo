@@ -1,6 +1,7 @@
 # Working with Vulnerable Populations
 
 ## Goal
+
 Understand how to interact respectfully and responsibly when working with or designing for vulnerable populations, including neurodivergent individuals.
 
 # Research
@@ -26,7 +27,6 @@ In digital spaces, these individuals may experience difficulties such as:
 
 Designing digital products without considering these challenges can make tools difficult or stressful for vulnerable users.
 
-
 ## Ethical Considerations When Designing for Neurodivergent Individuals
 
 When designing tools for neurodivergent individuals, it is important to follow ethical and inclusive design practices.
@@ -40,7 +40,6 @@ Important considerations include:
 - Avoid features that create unnecessary pressure or shame around productivity.
 
 Ethical design focuses on supporting users rather than judging or punishing them for productivity challenges.
-
 
 ## Making Digital Tools More Accessible
 
@@ -56,7 +55,6 @@ Some ways to improve accessibility for people with ADHD or Autism include:
 
 These practices can make productivity tools easier and less stressful to use.
 
-
 ## Supporting Neurodivergent Team Members
 
 Supporting neurodivergent colleagues is also important in a professional environment.
@@ -70,7 +68,6 @@ This can be done by:
 - Allowing flexibility in how people organise their work
 
 A supportive environment allows team members to contribute effectively while feeling comfortable and respected.
-
 
 # Reflection
 
@@ -86,7 +83,6 @@ To make my communication more inclusive, I can:
 
 This approach can help both users and teammates feel more comfortable and supported.
 
-
 ## UX or Communication Pitfalls
 
 Some common mistakes that could make Focus Bear less accessible include:
@@ -99,11 +95,9 @@ Some common mistakes that could make Focus Bear less accessible include:
 
 Avoiding these issues can help make the product more supportive for users who struggle with focus and executive functioning.
 
-
 ## Practical Change I Can Make
 
 One practical change I can make in my work is to focus on **clear and simple communication when writing instructions or messages**. This can help reduce confusion and make the platform easier for all users to understand.
-
 
 # Task
 
@@ -118,7 +112,6 @@ Many people with ADHD prefer tools that:
 - Avoid overwhelming visual elements
 - Offer encouragement instead of pressure
 
-
 ## Design Improvement Idea
 
 One possible improvement to make Focus Bear more accessible relates to how feedback prompts appear when users close or exit the app.
@@ -126,7 +119,6 @@ Currently, users may be asked why they are not using Focus Bear or why they are 
 A potential improvement could be to reduce how often these prompts appear, or only show them in specific cases such as when a user is uninstalling the app or leaving the platform permanently. This may help collect more thoughtful feedback while keeping the user experience smooth and less frustrating.
 
 another potential improvement is to make the **"Remove Blocks for Emergencies"** feature clearer. The current phrase might cause some users to misunderstand its purpose or feel unnecessary panic when they see it. A possible improvement could be to **reword the label or add a short explanation** so that users understand when and how it should be used, making the experience more reassuring and user-friendly.
-
 
 ## Example of a Supportive Response to a User
 
