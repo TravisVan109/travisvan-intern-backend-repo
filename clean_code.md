@@ -93,3 +93,10 @@ Reduced duplication and made control flow easier to understand.
 The processOrder() function now only coordinates the process.
 
 Future modifications (tax, new discounts, logging changes) can be done in small places instead of changing the whole function.
+
+# Writing Unit Tests for Clean Code
+## How do unit tests help keep code clean?
+Unit tests help keep code clean by forcing me to write smaller, more focused functions. When a function is too long or does too many things, it becomes harder to test. Because of this, unit testing naturally encourages better structure and separation of concerns. It also helps me catch mistakes early, so I can fix problems before they spread into other parts of the codebase. Overall, unit tests act like a quality check that keeps my code more reliable, simpler, and easier to maintain.
+
+## What issues did I find while testing?
+While testing, I found a few issues that showed me where my code needed improvement. Some functions didn’t handle edge cases properly, like unexpected input or missing data. I also noticed that some variable names were unclear, which made the tests harder to understand. In a few cases, I realised that my functions were doing too many things at once, which caused failures when I tried to write tests. Fixing these issues helped make my code cleaner, more readable, and easier to test.
