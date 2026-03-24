@@ -16,4 +16,4 @@ Managing dependencies and keeping the CI environment in sync with local developm
 ## How do CI/CD pipelines differ between small projects and large teams?
 
 Small projects: Pipelines are usually simpler, often focusing on basic builds, tests, and code formatting checks. They may run only on the main branch or PRs.
-Large teams: Pipelines are more complex, including multiple stages for unit tests, integration tests, security checks, code coverage, performance testing, and deployment to multiple environments. Thei must handle multiple contributors and branches simultaneously while maintaining stabilite.
+Large teams: Pipelines are more complex, including multiple stages for unit tests, integration tests, security checks, code coverage, performance testing, and deployment to multiple environments. They must handle multiple contributors and branches simultaneously while maintaining stability.
