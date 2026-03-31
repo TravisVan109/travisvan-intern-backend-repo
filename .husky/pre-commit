@@ -1,1 +1,8 @@
+#!/bin/sh
+
+# Run JS tests in root folder
+npx jest --testPathPatterns=triangle.test.js
+
+# Run NestJS tests in my-nest-app
+cd my-nest-app || exit
 npm test
