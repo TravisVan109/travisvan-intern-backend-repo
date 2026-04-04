@@ -1,0 +1,47 @@
+services:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nestjs_api
+    ports:
+      - '3000:3000'           # host:container
+    environment:
+      DATABASE_HOST: postgres  # container name = hostname on the network
+      DATABASE_PORT: 5432
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      NODE_ENV: production
+    depends_on:
+      postgres:
+        condition: service_healthy  # wait for postgres to be ready
+    networks:
+      - app-network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: nestjs_postgres
+    environment:
+    POSTGRES_USER: ${POSTGRES_USER}
+    POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - '5433:5432'           # expose to host for tools like pgAdmin
+    volumes:
+      - pgdata:/var/lib/postgresql/data   # named volume = data survives restarts
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U admin -d practice_db']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  pgdata:
