@@ -1,37 +1,36 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Item } from './item.entity';
+import { CreateItemDto } from './dto/create-item.dto';
 
 @Injectable()
 export class ItemsService {
-  private items = [
-    { id: 1, name: 'Item One' },
-    { id: 2, name: 'Item Two' },
-  ];
+  constructor(
+    @InjectRepository(Item)
+    private itemsRepository: Repository<Item>,
+  ) {}
 
   findAll() {
-    return this.items;
+    return this.itemsRepository.find();
   }
 
   findOne(id: number) {
-    const item = this.items.find(i => i.id === id);
-    if (!item) throw new NotFoundException(`Item ${id} not found`);
-    return item;
+    return this.itemsRepository.findOneBy({ id });
   }
 
-  create(body: { name: string }) {
-    const newItem = { id: Date.now(), name: body.name };
-    this.items.push(newItem);
-    return newItem;
+  create(body: CreateItemDto) {
+    const item = this.itemsRepository.create(body);
+    return this.itemsRepository.save(item);
   }
 
-  update(id: number, body: { name: string }) {
-    const item = this.findOne(id);
-    item.name = body.name;
-    return item;
+  async update(id: number, body: CreateItemDto) {
+    await this.itemsRepository.update(id, body);
+    return this.findOne(id);
   }
 
-  remove(id: number) {
-    const index = this.items.findIndex(i => i.id === id);
-    if (index === -1) throw new NotFoundException(`Item ${id} not found`);
-    return this.items.splice(index, 1);
+  async remove(id: number) {
+    await this.itemsRepository.delete(id);
+    return { deleted: true };
   }
 }
