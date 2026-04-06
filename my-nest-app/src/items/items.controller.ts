@@ -1,9 +1,10 @@
-import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Param, Body, ParseIntPipe } from '@nestjs/common';
 import { ItemsService } from './items.service';
+import { CreateItemDto } from './dto/create-item.dto';
 
 @Controller('items')
 export class ItemsController {
-  constructor(private readonly itemsService: ItemsService) {}
+  constructor(private readonly itemsService: ItemsService) { }
 
   @Get()
   findAll() {
@@ -11,22 +12,22 @@ export class ItemsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.itemsService.findOne(+id);
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.itemsService.findOne(id); // id is already a number now
   }
 
   @Post()
-  create(@Body() body: { name: string }) {
+  create(@Body() body: CreateItemDto) {
     return this.itemsService.create(body);
   }
 
   @Put(':id')
-  update(@Param('id') id: string, @Body() body: { name: string }) {
-    return this.itemsService.update(+id, body);
+  update(@Param('id', ParseIntPipe) id: number, @Body() body: CreateItemDto) {
+    return this.itemsService.update(id, body);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.itemsService.remove(+id);
+  remove(@Param('id', ParseIntPipe) id: number) {
+    return this.itemsService.remove(id);
   }
 }
