@@ -3,6 +3,7 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { ItemsController } from './items.controller';
 import { ItemsService } from './items.service';
 import { Item } from './item.entity';
+import { JobsService } from '../jobs/jobs.service';
 
 describe('ItemsController', () => {
   let controller: ItemsController;
@@ -22,6 +23,10 @@ describe('ItemsController', () => {
             update: jest.fn(),
             delete: jest.fn(),
           },
+        },
+        {
+          provide: JobsService,
+          useValue: { addJob: jest.fn() },
         },
       ],
     }).compile();

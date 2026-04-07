@@ -1,10 +1,11 @@
 import { Controller, Get, Post, Put, Delete, Param, Body, ParseIntPipe } from '@nestjs/common';
 import { ItemsService } from './items.service';
 import { CreateItemDto } from './dto/create-item.dto';
+import { JobsService } from '../jobs/jobs.service';
 
 @Controller('items')
 export class ItemsController {
-  constructor(private readonly itemsService: ItemsService) { }
+  constructor(private readonly itemsService: ItemsService, private readonly jobsService: JobsService) { }
 
   @Get()
   findAll() {
@@ -29,5 +30,10 @@ export class ItemsController {
   @Delete(':id')
   remove(@Param('id', ParseIntPipe) id: number) {
     return this.itemsService.remove(id);
+  }
+  @Post('test-job')
+  async testJob() {
+    await this.jobsService.addJob({ message: 'Hello from background!' });
+    return { status: 'Job queued' };
   }
 }

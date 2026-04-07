@@ -7,6 +7,8 @@ import { UsersModule } from './users/users.module';
 import { ItemsModule } from './items/items.module';
 import { LoggerMiddleware } from './logging/logger.middleware';
 import { ConfigModule } from '@nestjs/config';
+import { BullModule } from '@nestjs/bullmq';
+import { JobsModule } from './jobs/jobs.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -22,9 +24,16 @@ import { ConfigModule } from '@nestjs/config';
       autoLoadEntities: true,
       synchronize: false, // set to false, use migrations instead
     }),
+    BullModule.forRoot({
+      connection: {
+        host: 'localhost',
+        port: 6379,
+      },
+    }),
     CatsModule,
     UsersModule,
     ItemsModule,
+    JobsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
