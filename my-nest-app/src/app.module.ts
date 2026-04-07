@@ -20,7 +20,7 @@ import { ConfigModule } from '@nestjs/config';
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
       autoLoadEntities: true,
-      synchronize: true, // dev only, never use in production
+      synchronize: false, // set to false, use migrations instead
     }),
     CatsModule,
     UsersModule,
