@@ -9,6 +9,10 @@ import { LoggerMiddleware } from './logging/logger.middleware';
 import { ConfigModule } from '@nestjs/config';
 import { BullModule } from '@nestjs/bullmq';
 import { JobsModule } from './jobs/jobs.module';
+import { APP_GUARD } from '@nestjs/core';
+import { RolesGuard } from './roles.guard';
+import { AdminModule } from './admin/admin.module';
+import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -34,9 +38,18 @@ import { JobsModule } from './jobs/jobs.module';
     UsersModule,
     ItemsModule,
     JobsModule,
+    AuthModule,
+    AdminModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: RolesGuard,
+    }
+
+  ],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
