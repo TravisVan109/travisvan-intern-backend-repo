@@ -1,31 +1,22 @@
 // roles.guard.ts
 import { Injectable, CanActivate, ExecutionContext, ForbiddenException } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { ROLES_KEY } from '../admin/roles.decorator';
+import { ROLES_KEY } from './admin/roles.decorator';
 
 @Injectable()
 export class RolesGuard implements CanActivate {
-  constructor(private reflector: Reflector) {
-    console.log('===== RolesGuard INSTANTIATED =====');
-  }
+  constructor(private reflector: Reflector) {}
 
   canActivate(context: ExecutionContext): boolean {
-    console.log('========== ROLES GUARD EXECUTED ==========');
     const requiredRoles = this.reflector.getAllAndOverride<string[]>(ROLES_KEY, [
       context.getHandler(),
       context.getClass(),
     ]);
 
-    if (!requiredRoles) return true;
+    if (!requiredRoles) return true; // No roles required, allow access
 
-    const request = context.switchToHttp().getRequest();
-    const user = request.user;
-    
-    console.log('User:', user);  // Debug
-    console.log('Required roles:', requiredRoles);  // Debug
-    
-    const userRoles: string[] = user?.['https://myapp.com/roles'] ?? [];
-    console.log('User roles:', userRoles);  // Debug
+    const { user } = context.switchToHttp().getRequest();
+    const userRoles: string[] = user?.['https://focusbearonboard.com/roles'] ?? [];
 
     const hasRole = requiredRoles.some(role => userRoles.includes(role));
     if (!hasRole) throw new ForbiddenException('Insufficient permissions');
