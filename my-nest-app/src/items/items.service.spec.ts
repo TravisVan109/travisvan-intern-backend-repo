@@ -47,4 +47,9 @@ describe('ItemsService', () => {
 
     expect(item.sensitiveData).toBe('secret-value');
   });
+  it('should call find and return all items', async () => {
+    const findSpy = jest.spyOn(service, 'findAll');
+    await service.findAll();
+    expect(findSpy).toHaveBeenCalled();
+  });
 });
