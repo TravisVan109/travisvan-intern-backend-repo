@@ -7,6 +7,7 @@ import { JobsService } from '../jobs/jobs.service';
 
 describe('ItemsController', () => {
   let controller: ItemsController;
+  let service: ItemsService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -16,10 +17,10 @@ describe('ItemsController', () => {
         {
           provide: getRepositoryToken(Item),
           useValue: {
-            find: jest.fn(),
-            findOneBy: jest.fn(),
-            create: jest.fn(),
-            save: jest.fn(),
+            find: jest.fn().mockResolvedValue([{ id: 1, name: 'pen', quantity: 5 }]),
+            findOneBy: jest.fn().mockResolvedValue({ id: 1, name: 'pen', quantity: 5 }),
+            create: jest.fn().mockReturnValue({ id: 1, name: 'pen', quantity: 5 }),
+            save: jest.fn().mockResolvedValue({ id: 1, name: 'pen', quantity: 5 }),
             update: jest.fn(),
             delete: jest.fn(),
           },
@@ -32,9 +33,20 @@ describe('ItemsController', () => {
     }).compile();
 
     controller = module.get<ItemsController>(ItemsController);
+    service = module.get<ItemsService>(ItemsService);
   });
 
   it('should be defined', () => {
     expect(controller).toBeDefined();
+  });
+
+  it('should return all items', async () => {
+    const result = await controller.findAll();
+    expect(result).toBeInstanceOf(Array);
+  });
+
+  it('should return one item', async () => {
+    const result = await controller.findOne('1');
+    expect(result).toEqual({ id: 1, name: 'pen', quantity: 5 });
   });
 });
