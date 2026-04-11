@@ -13,15 +13,25 @@ import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './roles.guard';
 import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
+import * as Joi from 'joi';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
       envFilePath: './docker-practice-nestjs/.env',
+      isGlobal: true,// load .env file and make it available globally
+      validationSchema: Joi.object({
+        DATABASE_HOST: Joi.string().required(),
+        DATABASE_PORT: Joi.number().default(5432),
+        DATABASE_USER: Joi.string().required(),
+        DATABASE_PASSWORD: Joi.string().required(),
+        DATABASE_NAME: Joi.string().required(),
+      }),
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5433,
+      host: process.env.DATABASE_HOST,
+      port: process.env.DATABASE_PORT ? parseInt(process.env.DATABASE_PORT) : 5432,
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
