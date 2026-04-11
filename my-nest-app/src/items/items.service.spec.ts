@@ -5,7 +5,7 @@ import { Item } from './item.entity';
 
 describe('ItemsService', () => {
   let service: ItemsService;
-
+  let module: TestingModule;
   const mockItem: Item = {
     id: 1,
     name: 'test',
@@ -14,7 +14,7 @@ describe('ItemsService', () => {
   };
 
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
+    module = await Test.createTestingModule({
       providers: [
         ItemsService,
         {
@@ -62,5 +62,14 @@ describe('ItemsService', () => {
   it('should find one item', async () => {
     const result = await service.findOne(1);
     expect(result).toEqual(mockItem);
+  });
+  //Mock a TypeORM repository method and verify it was called
+  it('should call repository find when findAll is called', async () => {
+    const repo = module.get(getRepositoryToken(Item));
+    const spy = jest.spyOn(repo, 'find').mockResolvedValue([]);
+
+    await service.findAll();
+
+    expect(spy).toHaveBeenCalled();
   });
 });
