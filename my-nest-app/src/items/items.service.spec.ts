@@ -52,4 +52,15 @@ describe('ItemsService', () => {
     await service.findAll();
     expect(findSpy).toHaveBeenCalled();
   });
+  // Additional tests for create and findOne methods
+  it('should create an item', async () => {
+    const dto = { name: 'pen', quantity: 5, sensitiveData: 'secret' };
+    const result = await service.create(dto);
+    expect(result).toEqual(mockItem);
+  });
+
+  it('should find one item', async () => {
+    const result = await service.findOne(1);
+    expect(result).toEqual(mockItem);
+  });
 });
