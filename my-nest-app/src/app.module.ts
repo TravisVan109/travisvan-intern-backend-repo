@@ -14,6 +14,7 @@ import { RolesGuard } from './roles.guard';
 import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
 import * as Joi from 'joi';
+import { LoggerModule } from 'nestjs-pino';
 
 @Module({
   imports: [
@@ -50,6 +51,14 @@ import * as Joi from 'joi';
     JobsModule,
     AuthModule,
     AdminModule,
+    LoggerModule.forRoot({
+      pinoHttp: {
+        transport:
+          process.env.NODE_ENV !== 'production'
+            ? { target: 'pino-pretty' } // readable logs locally
+            : undefined,               // structured JSON in production
+      },
+    }),
   ],
   controllers: [AppController],
   providers: [
