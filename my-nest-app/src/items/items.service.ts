@@ -11,9 +11,14 @@ export class ItemsService {
     private itemsRepository: Repository<Item>,
   ) {}
 
-  findAll() {
-    return this.itemsRepository.find();
+async findAll() {
+  try {
+    return await this.itemsRepository.find();
+  } catch (err) {
+    console.error('findAll error:', err);
+    throw err;
   }
+}
 
   findOne(id: number) {
     return this.itemsRepository.findOneBy({ id });
