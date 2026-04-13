@@ -8,9 +8,9 @@ import { JobsService } from '../jobs/jobs.service';
 describe('ItemsController', () => {
   let controller: ItemsController;
   let service: ItemsService;
-
+  let module: TestingModule; // Store the module reference for later use in tests
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
+    module = await Test.createTestingModule({
       controllers: [ItemsController],
       providers: [
         ItemsService,
@@ -48,5 +48,15 @@ describe('ItemsController', () => {
   it('should return one item', async () => {
     const result = await controller.findOne('1');
     expect(result).toEqual({ id: 1, name: 'pen', quantity: 5 });
+  });
+  // Additional tests for improve coverage of update, and delete methods
+  it('should update an item', async () => {
+    await controller.update('1', { name: 'updated' });
+    expect(module.get(getRepositoryToken(Item)).update).toHaveBeenCalledWith('1', { name: 'updated' });
+  });
+
+  it('should delete an item', async () => {
+    await controller.remove('1');
+    expect(module.get(getRepositoryToken(Item)).delete).toHaveBeenCalledWith('1');
   });
 });
