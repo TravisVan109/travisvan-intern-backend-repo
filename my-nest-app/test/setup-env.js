@@ -1,0 +1,1 @@
+require('dotenv').config({ path: './docker-practice-nestjs/.env' });
