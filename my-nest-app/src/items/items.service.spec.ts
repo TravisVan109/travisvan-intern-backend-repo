@@ -20,7 +20,7 @@ describe('ItemsService', () => {
         {
           provide: getRepositoryToken(Item),
           useValue: {
-            find: jest.fn(),
+            find: jest.fn().mockResolvedValue([mockItem]),
             findOneBy: jest.fn().mockResolvedValue(mockItem),
             create: jest.fn().mockReturnValue(mockItem),
             save: jest.fn().mockResolvedValue(mockItem),
