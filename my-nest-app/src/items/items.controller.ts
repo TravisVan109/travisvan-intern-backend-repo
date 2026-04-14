@@ -1,12 +1,21 @@
-import { Controller, Get, Post, Put, Delete, Param, Body, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Param, Body, ParseIntPipe, Req } from '@nestjs/common';
 import { ItemsService } from './items.service';
 import { CreateItemDto } from './dto/create-item.dto';
 import { JobsService } from '../jobs/jobs.service';
+import type { FastifyRequest } from 'fastify';
 
 @Controller('items')
 export class ItemsController {
   constructor(private readonly itemsService: ItemsService, private readonly jobsService: JobsService) { }
 
+  // Uncomment this method to log request details for debugging
+  // @Get()
+  // findAll(@Req() req: FastifyRequest) {
+  //   // Log request headers and body for debugging
+  //   console.log('Headers:', req.headers);
+  //   console.log('Body:', req.body);
+  //   return this.itemsService.findAll();
+  // }
   @Get()
   findAll() {
     return this.itemsService.findAll();
